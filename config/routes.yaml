@@ -1,3 +1,23 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+evenement:
+  path: /evenement
+  controller: App\Controller\EvenementController::index
+
+createEvenement:
+  path: /evenement/create
+  controller: App\Controller\EvenementController::createEvent
+
+createReservation:
+  path: /evenement/{id}/createReservation
+  controller: App\Controller\ReservationController::createReservation
+
+reservation:
+  path: /reservation
+  controller: App\Controller\ReservationController::index
+
+removeReservation:
+  path: /reservation/{id}/delete
+  controller: App\Controller\ReservationController::removeReservation

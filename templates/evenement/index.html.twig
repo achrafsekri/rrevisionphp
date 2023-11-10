@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EvenementController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.table {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+	</style>
+
+	<div class="example-wrapper">
+		<h1 class="text-center">Liste des événements</h1>
+		<table class="table">
+			<thead>
+				<tr class="table">
+					<th class="table">Nom</th>
+					<th class="table">Type</th>
+					<th class="table">Date</th>
+					<th class="table">Lieux de l'événement</th>
+					<th class="table">nb places</th>
+					<th class="table">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for evenement in events %}
+					<tr class="table">
+						<td class="table">{{ evenement.nom }}</td>
+						<td class="table">{{ evenement.type }}</td>
+						<td class="table">{{ evenement.date }}</td>
+						<td class="table">{{ evenement.lieux }}</td>
+						<td class="table">{{ evenement.nombrePlace}}</td>
+						<td class="table"><a href="/evenement/5/createReservation">Reserver ici</a></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}
